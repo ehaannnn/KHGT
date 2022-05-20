@@ -8,13 +8,7 @@ from Utils.TimeLogger import log
 if args.data == 'yelp':
 	predir = '/media/SSD4TB/users/hangyul/KHGT/yelp_data/'
 	behs = ['tip', 'neg', 'neutral', 'pos']
-elif args.data == 'ml10m':
-	predir = 'Datasets/MultiInt-ML10M/'
-	behs = ['neg', 'neutral', 'pos']
-elif args.data == 'tmall':
-	elif args.target == 'buy':
-		predir = 'Datasets/retail/'
-	behs = ['pv', 'fav', 'cart', 'buy']
+
 trnfile = predir + 'trn_'
 tstfile = predir + 'tst_'
 
