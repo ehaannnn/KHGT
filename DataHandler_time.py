@@ -6,7 +6,7 @@ import scipy.sparse as sp
 from Utils.TimeLogger import log
 
 if args.data == 'yelp':
-	predir = 'Datasets/yelp/'
+	predir = '/media/SSD4TB/users/hangyul/KHGT/yelp_data/'
 	behs = ['tip', 'neg', 'neutral', 'pos']
 elif args.data == 'ml10m':
 	predir = 'Datasets/MultiInt-ML10M/'
@@ -46,17 +46,17 @@ def timeProcess(trnMats):
 
 def ObtainIIMats(trnMats, predir):
 	# # MAKE
-	iiMats = list()
-	for i in range(len(behs)):
-		iiMats.append(makeIiMats(trnMats[i]))
-		print('i', i)
-	with open(predir+'trn_catDict', 'rb') as fs:
-		catDict = pickle.load(fs)
-	iiMats.append(makeCatIiMats(catDict, trnMats[0].shape[1]))
+	# iiMats = list()
+	# for i in range(len(behs)):
+	# 	iiMats.append(makeIiMats(trnMats[i]))
+	# 	print('i', i)
+	# with open(predir+'trn_catDict', 'rb') as fs:
+	# 	catDict = pickle.load(fs)
+	# iiMats.append(makeCatIiMats(catDict, trnMats[0].shape[1]))
 
-	# # DUMP
-	with open(predir+'iiMats', 'wb') as fs:
-		pickle.dump(iiMats, fs)
+	# # # DUMP
+	# with open(predir+'iiMats', 'wb') as fs:
+	# 	pickle.dump(iiMats, fs)
 	# exit()
 
 	# READ
