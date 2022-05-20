@@ -46,17 +46,17 @@ def timeProcess(trnMats):
 
 def ObtainIIMats(trnMats, predir):
 	# # MAKE
-	# iiMats = list()
-	# for i in range(len(behs)):
-	# 	iiMats.append(makeIiMats(trnMats[i]))
-	# 	print('i', i)
-	# with open(predir+'trn_catDict', 'rb') as fs:
-	# 	catDict = pickle.load(fs)
-	# iiMats.append(makeCatIiMats(catDict, trnMats[0].shape[1]))
+	iiMats = list()
+	for i in range(len(behs)):
+		iiMats.append(makeIiMats(trnMats[i]))
+		print('i', i)
+	with open(predir+'trn_catDict', 'rb') as fs:
+		catDict = pickle.load(fs)
+	iiMats.append(makeCatIiMats(catDict, trnMats[0].shape[1]))
 
 	# # DUMP
-	# with open(predir+'iiMats_cache', 'wb') as fs:
-	# 	pickle.dump(iiMats, fs)
+	with open(predir+'iiMats', 'wb') as fs:
+		pickle.dump(iiMats, fs)
 	# exit()
 
 	# READ
